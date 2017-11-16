@@ -4,7 +4,8 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <h2>Header</h2>
+        <input type="search" className="header" placeholder="Search by Email Address"/>
+        <button className="header">Create</button>
       </div>
     );
   }

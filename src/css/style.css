@@ -12,5 +12,28 @@ div {
   margin: auto;
   background-color: #ffffff;
   margin-top: 5rem;
-  text-align: center;
+}
+
+input[type=search] {
+  width: 30%;
+  float: left;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 1px 5px;
+}
+
+button {
+  float: right;
+  background-color: #03a355;
+  color: #ffffff;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px;
+}
+
+.header {
+  margin: 2rem;
+  padding: .5rem;
 }
