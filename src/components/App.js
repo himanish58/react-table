@@ -9,9 +9,28 @@ class App extends React.Component {
     super();
     this.state = {
       details: sampleData,
-      isCreateClicked: false,
     };
     this.removePerson = this.removePerson.bind(this);
+    this.createPerson = this.createPerson.bind(this);
+  }
+
+  createPerson(event) {
+    event.preventDefault();
+    const name = getName();
+    const email = `${name}@abc.xyz`;
+    const phone = getPhoneNumber();
+    const address = getAddress();
+    const detail = {
+      name: name,
+      email: email,
+      phone: phone,
+      address: address,
+    };
+    const details = { ...this.state.details };
+    const timestamp = Date.now();
+    details[`person${timestamp}`] = detail;
+    console.log(details);
+    this.setState({ details });
   }
 
   removePerson(index) {
@@ -23,7 +42,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="mainArea">
-        <Header />
+        <Header createPerson={this.createPerson} />
         <Table personDetails={this.state.details} removePerson={this.removePerson} />
       </div>
     );

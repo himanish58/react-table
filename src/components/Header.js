@@ -5,7 +5,7 @@ class Header extends React.Component {
     return (
       <div>
         <input type="search" className="header" placeholder="Search by Email Address"/>
-        <button className="header">Create</button>
+        <button className="header" onClick={(e) => this.props.createPerson(e)}>Create</button>
       </div>
     );
   }
