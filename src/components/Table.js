@@ -8,7 +8,10 @@ class Table extends React.Component {
       (key) => {
         return personDetails[key].email.toLowerCase().indexOf(this.props.searchText.toLowerCase()) !== -1;
       }
-    ).map((i)=>personDetails[i]);
+    ).reduce((prev, current)=>{
+      prev[current] = personDetails[current];
+      return prev;
+    }, {});
 
     return (
       <table>
