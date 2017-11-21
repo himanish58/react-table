@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import sampleData from '../sampleData';
 import Table from './Table';
+import { getName, getPhoneNumber, getAddress } from '../getRandomDetails';
 
 class App extends React.Component {
   constructor() {
