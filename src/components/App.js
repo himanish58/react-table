@@ -29,7 +29,6 @@ class App extends React.Component {
     const details = { ...this.state.details };
     const timestamp = Date.now();
     details[`person${timestamp}`] = detail;
-    console.log(details);
     this.setState({ details });
   }
 

@@ -11,8 +11,8 @@ class Row extends React.Component {
         <td>{details.name}</td>
         <td>{details.email}</td>
         <td>{details.phone}</td>
+        <td>{details.address}</td>
         <td><a onClick={() => this.props.removePerson(index)}>DELETE</a></td>
-        <td><a>Details</a></td>
       </tr>
     );
   }

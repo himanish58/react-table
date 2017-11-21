@@ -10,7 +10,7 @@ class Table extends React.Component {
           <td>Name</td>
           <td>Email</td>
           <td>Phone</td>
-          <td></td>
+          <td>Address</td>
           <td></td>
         </tr>
       </thead>
