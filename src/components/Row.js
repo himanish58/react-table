@@ -4,14 +4,15 @@ class Row extends React.Component {
   render() {
 
     const details = this.props.details;
+    const index = this.props.index;
 
     return (
       <tr>
         <td>{details.name}</td>
         <td>{details.email}</td>
         <td>{details.phone}</td>
-        <td><a href="#">DELETE</a></td>
-        <td><a href="#">Details</a></td>
+        <td><a onClick={() => this.props.removePerson(index)}>DELETE</a></td>
+        <td><a>Details</a></td>
       </tr>
     );
   }

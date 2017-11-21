@@ -4,7 +4,7 @@ import Row from './Row';
 class Table extends React.Component {
   render() {
     return (
-      <table border='1'>
+      <table>
       <thead>
         <tr>
           <td>Name</td>
@@ -18,7 +18,7 @@ class Table extends React.Component {
         {
           Object
           .keys(this.props.personDetails)
-          .map((key) => <Row key={key} details={this.props.personDetails[key]} />)
+          .map((key) => <Row key={key} details={this.props.personDetails[key]} removePerson={this.props.removePerson} index={key} />)
         }
       </tbody>
       </table>

@@ -8,14 +8,22 @@ class App extends React.Component {
     super();
     this.state = {
       details: sampleData,
+      isCreateClicked: false,
     };
+    this.removePerson = this.removePerson.bind(this);
+  }
+
+  removePerson(index) {
+    const details = { ...this.state.details };
+    delete details[index];
+    this.setState({ details });
   }
 
   render() {
     return (
       <div className="mainArea">
         <Header />
-        <Table personDetails={this.state.details} />
+        <Table personDetails={this.state.details} removePerson={this.removePerson} />
       </div>
     );
   }
