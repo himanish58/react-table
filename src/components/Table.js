@@ -1,5 +1,6 @@
 import React from 'react';
 import Row from './Row';
+import PropTypes from 'prop-types';
 
 class Table extends React.Component {
   render() {
@@ -35,5 +36,10 @@ class Table extends React.Component {
     );
   }
 }
+
+Table.PropTypes = {
+  removePerson: PropTypes.func,
+  personDetails: PropTypes.object,
+};
 
 export default Table;

@@ -2,7 +2,7 @@ module.exports = {
   person1: {
     name: 'James',
     email: 'james@abc.xyz',
-    phone: '987654321',
+    phone: '9876543210',
     address: 'abc st, xyz, zip- 256987',
   },
   person2: {

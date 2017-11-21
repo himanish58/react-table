@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Row extends React.Component {
   render() {
@@ -17,5 +18,9 @@ class Row extends React.Component {
     );
   }
 }
+
+Row.PropTypes = {
+  removePerson: PropTypes.func,
+};
 
 export default Row;
