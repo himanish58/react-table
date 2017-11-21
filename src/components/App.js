@@ -6,7 +6,6 @@ import Table from './Table';
 class App extends React.Component {
   constructor() {
     super();
-    console.log(sampleData);
     this.state = {
       details: sampleData,
     };
@@ -16,7 +15,7 @@ class App extends React.Component {
     return (
       <div className="mainArea">
         <Header />
-        <Table />
+        <Table personDetails={this.state.details} />
       </div>
     );
   }
