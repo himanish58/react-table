@@ -9,9 +9,11 @@ class App extends React.Component {
     super();
     this.state = {
       details: sampleData,
+      searchText: '',
     };
     this.removePerson = this.removePerson.bind(this);
     this.createPerson = this.createPerson.bind(this);
+    this.updateSearchText = this.updateSearchText.bind(this);
   }
 
   createPerson(event) {
@@ -38,11 +40,17 @@ class App extends React.Component {
     this.setState({ details });
   }
 
+  updateSearchText(event) {
+    event.preventDefault();
+    const searchText = event.target.value;
+    this.setState({ searchText });
+  }
+
   render() {
     return (
       <div className="mainArea">
-        <Header createPerson={this.createPerson} />
-        <Table personDetails={this.state.details} removePerson={this.removePerson} />
+        <Header createPerson={this.createPerson} updateSearchText={this.updateSearchText} />
+        <Table personDetails={this.state.details} removePerson={this.removePerson} searchText={this.state.searchText} />
       </div>
     );
   }

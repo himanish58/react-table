@@ -3,6 +3,13 @@ import Row from './Row';
 
 class Table extends React.Component {
   render() {
+    let personDetails = this.props.personDetails;
+    let filteredPersons = Object.keys(personDetails).filter(
+      (key) => {
+        return personDetails[key].email.toLowerCase().indexOf(this.props.searchText.toLowerCase()) !== -1;
+      }
+    ).map((i)=>personDetails[i]);
+
     return (
       <table>
       <thead>
@@ -17,8 +24,8 @@ class Table extends React.Component {
       <tbody>
         {
           Object
-          .keys(this.props.personDetails)
-          .map((key) => <Row key={key} details={this.props.personDetails[key]} removePerson={this.props.removePerson} index={key} />)
+          .keys(filteredPersons)
+          .map((key) => <Row key={key} details={filteredPersons[key]} removePerson={this.props.removePerson} index={key} />)
         }
       </tbody>
       </table>
